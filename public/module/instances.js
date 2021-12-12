@@ -1,3 +1,5 @@
+import { Boss, Hero } from "./class.js";
+
 let chronos = new Boss("Chronos", 25000, 120);
 let sauron = new Boss("Sauron", 25000, 120);
 let lilith = new Boss("Lilith", 30000, 120);
@@ -23,3 +25,5 @@ if (randomMana == 1) {
 }
 
 hero3.fleches = Math.round(Math.random() * ( 11-7 ) + 7 );
+
+export{hero1,hero2,hero3,chronos,sauron,lilith}
