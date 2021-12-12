@@ -1,4 +1,4 @@
-import {hero1, hero2, hero3, chronos, sauron, lilith} from "./instances.js";
+import {aragorn, gandalf, legolas, chronos, sauron, lilith} from "./instances.js";
 
 let randomBoss = () => {
     let randomNumber = Math.round(Math.random() * (3 - 1) + 1);
@@ -10,16 +10,16 @@ let randomBoss = () => {
         return lilith;
     }
 }
-let hpTot = 1000;
+let hpTot = 1200;
 let paTot = 600;
 
 let startGame = (boss) => {
 
-    alert(`Salam Hbiba ! Aujourd'hui est un grand jour pour taper ton face contre : ${boss.nom} ! Donne un nom aux 3 perso disponible ! `);
+    alert(`Salam Hbiba ! Aujourd'hui est un grand jour pour taper ton face contre : ${boss.name} ! Donne un blaze aux 3 perso disponible ! `);
 
-    hero1.nom = prompt(`Le nom du premier héro (Guerrier) :`);
-    hero2.nom = prompt(`Le nom du second héro (Mage):`);
-    hero3.nom = prompt(`Le nom du troisième héro (Archer):`);
+    aragorn.name = prompt(`Le nom du premier héro (Guerrier) : \n (Aragorn)`);
+    gandalf.name = prompt(`Le nom du second héro (Mage): \n (Gandalf)`);
+    legolas.name = prompt(`Le nom du troisième héro (Archer): \n (Legolas)`);
     
     alert(`Niceuuuu ! T'as le droit à ${hpTot} points de vie et ${paTot} points d'action à départager à tes 3 héros !`);
 
@@ -30,9 +30,9 @@ let startGame = (boss) => {
         if (hpTot > 0) {
             let i = 0
             do {
-                let hp1 = prompt(`Combien de hp vas tu donné à ${hero1.nom} ? (${hpTot} hp dispo)`);
+                let hp1 = prompt(`Combien d'hp vas tu donné à ${aragorn.name} ? (${hpTot} hp dispo)`);
                 if (hp1 <= hpTot) {
-                hero1.hp = hp1;
+                aragorn.hp = hp1;
                 hpTot -= hp1;
                 i++
                 }
@@ -42,9 +42,9 @@ let startGame = (boss) => {
         if (hpTot > 0) {
             let i = 0
             do {
-                let hp2 = prompt(`Combien de hp vas tu donné à ${hero2.nom} ? (${hpTot} hp dispo)`);
+                let hp2 = prompt(`Combien d'hp vas tu donné à ${gandalf.name} ? (${hpTot} hp dispo)`);
                 if (hp2 <= hpTot) {
-                hero2.hp = hp2;
+                gandalf.hp = hp2;
                 hpTot -= hp2;
                 i++
                 }
@@ -54,9 +54,9 @@ let startGame = (boss) => {
         if (hpTot > 0) {
             let i = 0
             do {
-                let hp3 = prompt(`Combien de hp vas tu donné à ${hero3.nom} ? (${hpTot} hp dispo)`);
+                let hp3 = prompt(`Combien d'hp vas tu donné à ${legolas.name} ? (${hpTot} hp dispo)`);
                 if (hp3 <= hpTot) {
-                hero3.hp = hp3;
+                legolas.hp = hp3;
                 hpTot -= hp3;
                 i++
                 }
@@ -73,9 +73,9 @@ let startGame = (boss) => {
         if (paTot > 0) {
             let i = 0
             do {
-                let pa1 = prompt(`Combien de pa souhaitez vous accorder à ${hero1.nom} ? (${paTot} pa disponibles)`);
+                let pa1 = prompt(`Combien de PA (point d'action) veux tu donnés à : ${aragorn.name} ? (${paTot} pa disponibles)`);
                 if (pa1 <= paTot) {
-                hero1.pa = pa1;
+                aragorn.pa = pa1;
                 paTot -= pa1;
                 i++
                 }
@@ -85,9 +85,9 @@ let startGame = (boss) => {
         if (paTot > 0) {
             let i = 0
             do {
-                let pa2 = prompt(`Combien de pa souhaitez vous accorder à ${hero2.nom} ? (${paTot} pa disponibles)`);
+                let pa2 = prompt(`Combien de PA (point d'action) veux tu donnés à : ${gandalf.name} ? (${paTot} pa disponibles)`);
                 if (pa2 <= paTot) {
-                hero2.pa = pa2;
+                gandalf.pa = pa2;
                 paTot -= pa2;
                 i++
                 }
@@ -97,9 +97,9 @@ let startGame = (boss) => {
         if (paTot > 0) {
             let i = 0
             do {
-                let pa3 = prompt(`Combien de pa souhaitez vous accorder à ${hero3.nom} ? (${paTot} pa disponibles)`);
+                let pa3 = prompt(`Combien de PA (point d'action) veux tu donnés à : ${legolas.name} ? (${paTot} pa disponibles)`);
                 if (pa3 <= paTot) {
-                hero3.pa = pa3;
+                legolas.pa = pa3;
                 paTot -= pa3;
                 i++
                 }
@@ -110,13 +110,13 @@ let startGame = (boss) => {
 
     let firstType = "";
     do {
-        firstType = prompt(`Quel type de joueur vas tu choisir pour : ${hero1.nom} ? (Attack/Défense) :`).toLowerCase().trim();
+        firstType = prompt(`Quel type de joueur vas tu choisir pour : ${aragorn.name} ? (Attack/Défense) :`).toLowerCase().trim();
         switch (firstType) {
             case "attack":
-                hero1.attack();
+                aragorn.attack();
                 break;
             case "defense":
-                hero1.defense();
+                aragorn.defense();
                 break;
         }
 
@@ -124,13 +124,13 @@ let startGame = (boss) => {
 
     let secondType = "";
     do {
-        secondType = prompt(`Quel type de joueur vas tu choisir pour : ${hero2.nom} ? (Attack/Défense) :`).toLowerCase().trim();
+        secondType = prompt(`Quel type de joueur vas tu choisir pour : ${gandalf.name} ? (Attack/Défense) :`).toLowerCase().trim();
         switch (secondType) {
             case "attack":
-                hero2.attack();
+                gandalf.attack();
                 break;
             case "defense":
-                hero2.defense();
+                gandalf.defense();
                 break;
         }
 
@@ -138,70 +138,70 @@ let startGame = (boss) => {
 
     let thirdType = "";
     do {
-        thirdType = prompt(`Quel type de joueur vas tu choisir pour : ${hero3.nom} ? (Attack/Défense) :`).toLowerCase().trim();
+        thirdType = prompt(`Quel type de joueur vas tu choisir pour : ${legolas.name} ? (Attack/Défense) :`).toLowerCase().trim();
         switch (thirdType) {
             case "attack":
-                hero3.attack();
+                legolas.attack();
                 break;
             case "defense":
-                hero3.defense();
+                legolas.defense();
                 break;
         }
 
     } while (thirdType != "attack" && thirdType != "defense" && thirdType != "normale" );
-    alert(`${hero1.nom} : ${hero1.hp}hp et ${hero1.pa}pa`);
-    alert(`${hero2.nom} : ${hero2.hp}hp et ${hero2.pa}pa`);
-    alert(`${hero3.nom} : ${hero3.hp}hp et ${hero3.pa}pa`);
+    alert(`${aragorn.name} : ${aragorn.hp}hp et ${aragorn.pa}pa`);
+    alert(`${gandalf.name} : ${gandalf.hp}hp et ${gandalf.pa}pa`);
+    alert(`${legolas.name} : ${legolas.hp}hp et ${legolas.pa}pa`);
 
-    console.log(hero1,hero2,hero3);
-    console.log(boss);
+    alert(aragorn,gandalf,legolas);
+    alert(boss.name);
 }
 
 let attGuerrier = (boss) => {
-    let newpa = hero1.pa * 1.25;
-    if (hero1.etat == "alive") {
-        if (hero1.rage < 4) {
-            hero1.rage = hero1.rage + 1;
-            boss.hp -= hero1.pa;
-            alert(`${hero1.nom} attack ${boss.nom} : -${hero1.pa} hp.`);
+    let newpa = aragorn.pa * 1.25;
+    if (aragorn.etat == "alive") {
+        if (aragorn.rage < 4) {
+            aragorn.rage = aragorn.rage + 1;
+            boss.hp -= aragorn.pa;
+            alert(`${aragorn.name} attack ${boss.name} : -${aragorn.pa} hp.`);
         } else {
-            hero1.rage = 0
+            aragorn.rage = 0
             boss.hp -= newpa;
-            alert(`${hero1.nom} est enragé, il attack ${boss.nom} : -${newpa} hp.`);
+            alert(`${aragorn.name} fou de rage, il tartaq ${boss.name} : -${newpa} hp.`);
         }
     }
 }
 
 let attMage = (boss) => {
-    if (hero2.etat == "alive") {
-        if (hero2.mana > 1) {
-            boss.hp -= hero2.pa;
-            hero2.mana -= 2;
-            alert(`${hero2.nom} attack ${boss.nom} : -${hero2.pa} hp.`)
+    if (gandalf.etat == "alive") {
+        if (gandalf.mana > 1) {
+            boss.hp -= gandalf.pa;
+            gandalf.mana -= 2;
+            alert(`${gandalf.name} attack ${boss.name} : -${gandalf.pa} hp.`)
         } else {
-            hero2.mana = 7;
-            alert(`${hero2.nom} prend son temps pour récupérer du mana : pas d'attack.`);
+            gandalf.mana = 7;
+            alert(`${gandalf.name} récupère du mana, il n'attaquera pas ce tour ci !`);
         }
     }
 }
 
 let attArcher = (boss) => {
-    if (hero2.etat == "alive") {
-        if (hero3.fleches > 1) {
-            hero3.fleches -= 2;
-            hero3.fleches += 1;
-            boss.hp -= hero3.pa;
-            alert(`${hero3.nom} attack ${boss.nom} : -${hero3.pa} hp.`)
+    if (gandalf.etat == "alive") {
+        if (legolas.fleches > 1) {
+            legolas.fleches -= 2;
+            legolas.fleches += 1;
+            boss.hp -= legolas.pa;
+            alert(`${legolas.name} attack ${boss.name} : -${legolas.pa} hp.`)
         } else {
-            hero3.fleches += 6;
-            alert(`${hero3.nom} attend de recevoir de nouvelles flèches : pas d'attack.`);
+            legolas.fleches += 6;
+            alert(`${legolas.name} attend de recevoir de nouvelles flèches : mtala3 dem.`);
         }
     }
 }
 
 let checkForLose = (boss) => {
-    if (hero1.etat == "dead" && hero2.etat == "dead" && hero3.etat == "dead") {
-        alert(`Vous avez perdu ... ${boss.nom} était trop fort pour vous.`);
+    if (aragorn.etat == "dead" && gandalf.etat == "dead" && legolas.etat == "dead") {
+        alert(`Unlucky... ${boss.name} était trop hamé.`);
         return true;
     }
 }
@@ -213,11 +213,11 @@ let attBoss = (boss, champions) => {
     let randomHero = Math.round(Math.random() * ((champions.length-1) - 1) + 1);
 
         champions[randomHero].hp -= boss.pa;
-        alert(`${boss.nom} attack ${champions[randomHero].nom} : -${boss.pa} hp.`);
+        alert(`${boss.name} attack ${champions[randomHero].name} : -${boss.pa} hp.`);
         if (champions[randomHero] <= 0) {
             champions[randomHero] = "dead"
             champions.forEach(e => {
-                if (e.nom.includes(champions[randomHero].nom)) {
+                if (e.name.includes(champions[randomHero].name)) {
                     champions.splice(e);
                 }
             });
@@ -227,9 +227,9 @@ let attBoss = (boss, champions) => {
 
 
 
-let combat = (boss) => {
+let fight = (boss) => {
     let hpBoss = boss.hp;
-    let champions = [hero1,hero2,hero3];
+    let champions = [aragorn,gandalf,legolas];
     champions.forEach(e => {
         if (e.posture == "defense") {
             champions.push(e);
@@ -241,7 +241,7 @@ let combat = (boss) => {
         attArcher(boss);
         attBoss(boss,champions);
     } while (boss.hp > hpBoss / 5 && !checkForLose(boss));
-    console.log(boss,hero1,hero2,hero3);
+    alert(boss,aragorn,gandalf,legolas);
 }
 
-export{startGame,randomBoss,combat};
+export{startGame,randomBoss,fight};
