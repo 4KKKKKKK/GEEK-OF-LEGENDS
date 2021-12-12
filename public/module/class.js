@@ -13,7 +13,7 @@ class Hero{
         this.pa = pa;
         this.etat = "alive";
         this.defense = () => {
-            this.hp = this.hp * 2.5;
+            this.hp = this.hp * 2.5; 
             this.pa = this.pa * 0.5;
             this.posture = "defense";
         }

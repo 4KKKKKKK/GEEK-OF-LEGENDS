@@ -1,8 +1,8 @@
 import { Boss, Hero } from "./class.js";
 
-let chronos = new Boss("Chronos", 25000, 120);
-let sauron = new Boss("Sauron", 25000, 120);
-let lilith = new Boss("Lilith", 30000, 120);
+let chronos = new Boss("Chronos", 1500, 200);
+let sauron = new Boss("Sauron", 1200, 200);
+let lilith = new Boss("Lilith", 2000, 200);
 
 let hero1 = new Hero();
 let hero2 = new Hero();
